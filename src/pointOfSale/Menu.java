@@ -9,12 +9,14 @@ package pointOfSale;
  *
  * @author justech@ubuntu.com
  */
+import java.awt.BorderLayout;
 import java.sql.Connection;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JScrollPane;
 
 public class Menu extends JFrame {
     private static Object request;
@@ -26,14 +28,22 @@ public class Menu extends JFrame {
         //Table definition
         String [] columnNames = {"MealID","Description","Price"};
         myTable = new JTable(40, 3);
-        myTable.setBounds(20,10,400,700);
+        myTable.setBounds(20,10,400,600);
+        
         
         //JFrame definition
         JFrame frame = new JFrame("Kafuco Mess Menu");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
         frame.setSize(450,700);
+        // add empty scrollPane to JPanel which will later hold table
+        JScrollPane scrollPane = new JScrollPane(); 
+        add(scrollPane);
+        scrollPane.getViewport ().add (myTable);
+        
+        
         frame.setResizable(false);
+        frame.setLocationRelativeTo(this);
         frame.setVisible(true);
         frame.add(myTable);
 
