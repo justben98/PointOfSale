@@ -11,7 +11,7 @@ package pointOfSale.MyExceptions;
 public class WrongChoiceException extends Exception {
     //My default constructor
     public WrongChoiceException (){
-        super ("Meal not in database or wrong password!");
+        super ("Meal not in database or wrong login credentials!");
     }
     
     //Parameterized constructor

@@ -43,7 +43,6 @@ public class AdminLogin extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
 
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(1366, 768));
 

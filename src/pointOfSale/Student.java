@@ -325,6 +325,7 @@ public class Student extends javax.swing.JFrame {
                                 url1.close();
                                 url2.close();
                                 url3.close();
+                                JOptionPane.showMessageDialog(null, "Transaction successful!");
                             }catch(InSufficientBalException e1){
                                 JOptionPane.showMessageDialog(null, e1);
                                
@@ -358,7 +359,7 @@ public class Student extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Click to veiw menu
         Menu window = new Menu();
-        window.setVisible(null);
+        window.Menu();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
