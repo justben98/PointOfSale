@@ -9,43 +9,53 @@ package pointOfSale;
  *
  * @author justech@ubuntu.com
  */
-import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JScrollPane;
+import javax.swing.JButton;
+
+class EndingListener implements ActionListener{
+    public void actionPerformed(ActionEvent e){
+        //Exit status
+        Menu.frame.dispose();
+    }
+}
+
 
 public class Menu extends JFrame {
     private static Object request;
     static JTable myTable;
+    protected static JFrame frame;
     
     
     //constructor Menu
     public void Menu (){
         //Table definition
-        String [] columnNames = {"MealID","Description","Price"};
+        String [] columnNames = {"MealID", "Description", "Price"};
         myTable = new JTable(40, 3);
         myTable.setBounds(20,10,400,600);
         
         
         //JFrame definition
-        JFrame frame = new JFrame("Kafuco Mess Menu");
+        frame = new JFrame("Kafuco Mess Menu");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
         frame.setSize(450,700);
-        // add empty scrollPane to JPanel which will later hold table
-        JScrollPane scrollPane = new JScrollPane(); 
-        add(scrollPane);
-        scrollPane.getViewport ().add (myTable);
-        
-        
         frame.setResizable(false);
         frame.setLocationRelativeTo(this);
         frame.setVisible(true);
         frame.add(myTable);
+        
+        JButton closeButton = new JButton ("CLOSE");
+        EndingListener buttonEar = new EndingListener();
+        closeButton.addActionListener(buttonEar);
+        frame.add(closeButton);
+        
 
         //frame.add(mysTable);
         try {
@@ -68,10 +78,6 @@ public class Menu extends JFrame {
                 myTable.setValueAt(rs.getString("Description"),li_row,1);
                 myTable.setValueAt(rs.getFloat("Price"),li_row,2);
 
-                //String iD = rs.getString("MealID");
-                //String desc = rs.getString("Description");
-                //float price = rs.getFloat("Price");
-
                 li_row++;
             }
            
@@ -84,5 +90,6 @@ public class Menu extends JFrame {
         }
 
     }
+    
 
 }
