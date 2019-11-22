@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/root/NetBeansProjects/PointOfSale/src/pointOfSale/Student.java</file>
-            <file>file:/root/NetBeansProjects/PointOfSale/src/pointOfSale/Menu.java</file>
-            <file>file:/root/NetBeansProjects/PointOfSale/src/pointOfSale/MainWindow.java</file>
-            <file>file:/root/NetBeansProjects/PointOfSale/src/pointOfSale/AdminLogin.java</file>
-            <file>file:/root/NetBeansProjects/PointOfSale/src/pointOfSale/MyExceptions/WrongChoiceException.java</file>
+            <file>file:/home/justech/NetbeansProjects/PointOfSale/src/pointOfSale/MainWindow.java</file>
+            <file>file:/home/justech/NetbeansProjects/PointOfSale/src/pointOfSale/Student.java</file>
+            <file>file:/home/justech/NetbeansProjects/PointOfSale/src/pointOfSale/Menu.java</file>
+            <file>file:/home/justech/NetbeansProjects/PointOfSale/src/pointOfSale/AccountBal.java</file>
         </group>
     </open-files>
 </project-private>

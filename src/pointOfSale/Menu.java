@@ -65,7 +65,7 @@ public class Menu extends JFrame {
             try {
 
             Connection url = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                        "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
             
             // select dish from Meals table 
             java.sql.Statement stmts = null;
@@ -74,7 +74,7 @@ public class Menu extends JFrame {
             ResultSet rs = stmts.executeQuery(query);
             int li_row = 0;
             while(rs.next()){
-                myTable.setValueAt(rs.getString("MealID"),li_row,0);
+                myTable.setValueAt(rs.getString("ID"),li_row,0);
                 myTable.setValueAt(rs.getString("Description"),li_row,1);
                 myTable.setValueAt(rs.getFloat("Price"),li_row,2);
 

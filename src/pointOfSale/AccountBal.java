@@ -62,12 +62,6 @@ public class AccountBal extends javax.swing.JFrame {
 
         jPasswordField1.setText("jPasswordField1");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
         jButton1.setText("Balance");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,11 +156,8 @@ public class AccountBal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
@@ -184,7 +175,7 @@ public class AccountBal extends javax.swing.JFrame {
                 //Connect to the database
                 Class.forName(driverName);
                 Connection url = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                        "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
                 //Execute query
                 PreparedStatement pstmt1 = url.prepareStatement(sql1);
                 ResultSet rs = pstmt1.executeQuery();

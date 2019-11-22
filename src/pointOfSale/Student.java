@@ -46,13 +46,11 @@ public class Student extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jDesktopPane5 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(1326, 768));
 
-        jDesktopPane1.setPreferredSize(new java.awt.Dimension(910, 326));
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1326, 768));
 
         jLabel9.setText("Meal NO.");
 
@@ -199,17 +197,6 @@ public class Student extends javax.swing.JFrame {
         );
         jDesktopPane3.setLayer(jDesktopPane6, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jDesktopPane5Layout = new javax.swing.GroupLayout(jDesktopPane5);
-        jDesktopPane5.setLayout(jDesktopPane5Layout);
-        jDesktopPane5Layout.setHorizontalGroup(
-            jDesktopPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 477, Short.MAX_VALUE)
-        );
-        jDesktopPane5Layout.setVerticalGroup(
-            jDesktopPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 667, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
@@ -219,41 +206,35 @@ public class Student extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jDesktopPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(216, 216, 216)
-                .addComponent(jDesktopPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(678, Short.MAX_VALUE))
+                .addContainerGap(1371, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(269, 269, 269)
-                        .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jDesktopPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jDesktopPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addGap(269, 269, 269)
+                .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jDesktopPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(267, Short.MAX_VALUE))
         );
         jDesktopPane1.setLayer(jDesktopPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jDesktopPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jDesktopPane5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1700, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -283,18 +264,18 @@ public class Student extends javax.swing.JFrame {
          try{ 
             Class.forName(driverName);
             Connection url1 = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
             //Execute query
             PreparedStatement pstmt = url1.prepareStatement(sql1);
             ResultSet rs1 = pstmt.executeQuery();
             
             while (rs1.next()){
-                sMealID = rs1.getString("MealID");
+                sMealID = rs1.getString("ID");
                 float price = rs1.getFloat("Price");
                 
                     Class.forName(driverName);
                     Connection url2 = DriverManager.getConnection(
-                            "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                            "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
                     PreparedStatement pstmt1 = url2.prepareStatement(sql2);
                     ResultSet rs2 = pstmt1.executeQuery();
 
@@ -316,7 +297,7 @@ public class Student extends javax.swing.JFrame {
                                 //Update Student Table Balance
                                 Class.forName(driverName);
                                 Connection url3 = DriverManager.getConnection(
-                                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
                                 PreparedStatement pst = url3.prepareStatement(sql3);
                                 
                                 pst.setFloat(1, newBal);
@@ -326,21 +307,31 @@ public class Student extends javax.swing.JFrame {
                                 url2.close();
                                 url3.close();
                                 JOptionPane.showMessageDialog(null, "Transaction successful!");
+                                
+                                //For security refresh the window
+                                dispose();
+                                Student window = new Student();
+                                window.setVisible(true);
+                                
                             }catch(InSufficientBalException e1){
-                                JOptionPane.showMessageDialog(null, e1);
+                                JOptionPane.showMessageDialog(null, e1.getMessage() +"\nProgram exiting...!");
+                                System.exit(0);
                                
                             }
                             
                         }
                     }
              }
-            if(!regNumber.equals(Reg_No) || !password.equals(passwd) || !mealID.equals(sMealID)){
+            if(!regNumber.contains(Reg_No) || password.contains(passwd) || mealID.contains(sMealID)){
                             throw new WrongChoiceException();
                         }
             
-          }catch(WrongChoiceException e1){
-              JOptionPane.showMessageDialog(null, e1.getMessage());
-          }    
+            }catch(WrongChoiceException e1){
+                JOptionPane.showMessageDialog(null, e1.getMessage());
+                dispose();
+                Student window = new Student();
+                window.setVisible(true);
+            }    
             
         }catch (Exception e){
             /**
@@ -409,7 +400,6 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JDesktopPane jDesktopPane3;
     private javax.swing.JDesktopPane jDesktopPane4;
-    private javax.swing.JDesktopPane jDesktopPane5;
     private javax.swing.JDesktopPane jDesktopPane6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

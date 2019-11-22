@@ -9,7 +9,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import static pointOfSale.Menu.myTable;
 
 /**
  *
@@ -42,6 +44,11 @@ public class Admin extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jInternalFrame2 = new javax.swing.JInternalFrame();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -70,7 +77,7 @@ public class Admin extends javax.swing.JFrame {
 
         jInternalFrame1.setVisible(true);
 
-        jLabel1.setText("Meal No");
+        jLabel1.setText("Meal ID");
 
         jLabel2.setText("Description");
 
@@ -87,6 +94,48 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Remove Dish Form Menu");
+
+        jLabel5.setText("Meal ID");
+
+        jButton2.setText("DELETE");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                        .addGap(129, 129, 129)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
@@ -95,6 +144,9 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 104, Short.MAX_VALUE))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -102,12 +154,12 @@ public class Admin extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(51, 51, 51)
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jTextField1)
                             .addComponent(jTextField2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jTextField3))))
                 .addContainerGap())
         );
         jInternalFrame1Layout.setVerticalGroup(
@@ -127,8 +179,9 @@ public class Admin extends javax.swing.JFrame {
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addComponent(jTextField3)
                         .addGap(3, 3, 3)))
-                .addGap(338, 338, 338)
                 .addComponent(jButton1)
+                .addGap(57, 57, 57)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -276,7 +329,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton4.setText("Exit");
+        jButton4.setText("Logout");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -294,7 +347,7 @@ public class Admin extends javax.swing.JFrame {
                 .addComponent(jInternalFrame4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4)
@@ -356,7 +409,7 @@ public class Admin extends javax.swing.JFrame {
             //Connect to database
             Class.forName(driverName);
             Connection url1 = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
             
             //Update table
             PreparedStatement pstmt = url1.prepareStatement(sql1);
@@ -386,7 +439,7 @@ public class Admin extends javax.swing.JFrame {
             //Connect to database
             Class.forName(driverName);
             Connection url1 = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
             
             //Update table
             PreparedStatement pstmt2 = url1.prepareStatement(sql2);
@@ -416,7 +469,7 @@ public class Admin extends javax.swing.JFrame {
             //Connect to database
             Class.forName(driverName);
             Connection url3 = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
             
             //Update table
             PreparedStatement pstmt3 = url3.prepareStatement(sql3);
@@ -431,6 +484,41 @@ public class Admin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }                        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Remove Meal From the Database
+        try {
+            //Load connection drivers
+            Class.forName("com.mysql.jdbc.Driver");
+            String mealID = jTextField4.getText();
+            float id = Float.parseFloat(mealID);
+          
+            try {
+
+            Connection url = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
+            
+            // Delete the meal that matches the scanned ID 
+            java.sql.Statement pstmt = null;
+            String query = "DELETE FROM Meals WHERE ID=?";
+            pstmt = url.createStatement();
+            PreparedStatement pstmt1 = url.prepareStatement(query);
+            pstmt1.setFloat(1, id);
+            pstmt1.execute();
+            
+            //Close the connection
+            url.close();
+            
+            JOptionPane.showMessageDialog(null, "Operation Successful!");
+           
+            } catch (SQLException e) {
+                e.printStackTrace();
+                    }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -476,6 +564,7 @@ public class Admin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
@@ -490,10 +579,13 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField4;
     private javax.swing.JTextField jTextField1;
@@ -501,6 +593,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;

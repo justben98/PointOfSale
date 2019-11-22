@@ -18,7 +18,6 @@ import MyTimer.Timer;
  * @author root
  */
 public class AdminLogin extends javax.swing.JFrame {
-
     /**
      * Creates new form AdminLogin
      */
@@ -148,7 +147,6 @@ public class AdminLogin extends javax.swing.JFrame {
          * This button takes you to the administrative window
          */
         
-        
         try{
             //Variable declaration
             String username = jTextField1.getText();
@@ -159,7 +157,8 @@ public class AdminLogin extends javax.swing.JFrame {
             //Connect to the database
             Class.forName(driverName);
             Connection url = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","");
+                    "jdbc:mysql://localhost:3306/KafucoMessDB?autoReconnect=true&useSSL=false","root","Bmwmb.benlasalle2016");
+            
             //Execute query
             PreparedStatement pstmt = url.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
@@ -184,17 +183,20 @@ public class AdminLogin extends javax.swing.JFrame {
                 }
                 if(!username.equals(user) || !password.equals(passwd)){
                     throw new InvalidCredentialsException ();
+                   
                 }
+                
             }catch (InvalidCredentialsException e1){
-                JOptionPane.showMessageDialog(null, "Invalid username or password!\n"
-                        + "\nTry again after 15 seconds?");
-                Timer start = new Timer();
-                start.timeOut();
-                dispose();
-                MainWindow back = new MainWindow();
-                back.setVisible(true);
-
+                    //Show error message and refresh window
+                    JOptionPane.showMessageDialog(null, e1.getMessage() + "\nTry again after 15 seconds.");
+                    Timer lock = new Timer();
+                    lock.timeOut();
+                    
+                    dispose();
+                    AdminLogin window = new AdminLogin();
+                    window.setVisible(true);
             }
+            
         }catch (Exception e){
             /**
              * Catch:
